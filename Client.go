@@ -49,6 +49,7 @@ type Result struct {
 		SolidRepublican int `json:"sold-r"`
 		Tossup int `json:"toss-up"`
 	} `json:"house"`
+	LastUpdated string `json:"lastUpdated"`
 }
 
 func New(timeout time.Duration) *Client {
