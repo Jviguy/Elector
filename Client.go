@@ -12,7 +12,7 @@ type Client struct {
 
 type Result struct {
 	President struct {
-		CalledWinner string `json:"called-winner"`
+		CalledWinner bool `json:"called-winner"`
 		CalledDemocrats int `json:"called-d"`
 		CalledRepublican int `json:"called-r"`
 		LeanDemocrat int `json:"lean-d"`
@@ -24,7 +24,7 @@ type Result struct {
 		Tossup int `json:"toss-up"`
 	} `json:"president"`
 	Senate struct {
-		CalledWinner string `json:"called-winner"`
+		CalledWinner bool `json:"called-winner"`
 		SeatedDemocrats int `json:"seated-d"`
 		SeatedRepublicans int `json:"seated-r"`
 		CalledDemocrats int `json:"called-d"`
@@ -62,7 +62,6 @@ func (c Client) GetData(year int) (*Result,error) {
 		return nil,err
 	}
 	body, err := ioutil.ReadAll(res.Body)
-	println(string(body))
 	data := &Result{}
 	err = json.Unmarshal(body,data)
 	return data , err
