@@ -24,7 +24,7 @@ type Result struct {
 		Tossup int `json:"toss-up"`
 	} `json:"president"`
 	Senate struct {
-		CalledWinner bool `json:"called-winner"`
+		CalledWinner string `json:"called-winner"`
 		SeatedDemocrats int `json:"seated-d"`
 		SeatedRepublicans int `json:"seated-r"`
 		CalledDemocrats int `json:"called-d"`
